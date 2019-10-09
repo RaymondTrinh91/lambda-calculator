@@ -13,7 +13,7 @@ const Numbers = (props) => {
   const [numBtn] = useState(numbers);
 
   return (
-    <div>
+    <div className = "numberContain">
       {numBtn.map((num, index) => (
         <NumberButton key={index} button={num} addNum={props.addNum} />
       ))}

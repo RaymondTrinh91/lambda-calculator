@@ -20,3 +20,34 @@
     padding-right: 8%;
     font-size: 5.0rem;
   }
+.calcBtn{
+    display: flex;
+}
+
+.specialContain{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+
+.numberContain{
+    display: flex;
+    width: 90%;
+    height: max-content;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.objContain{
+    padding-top: 5%;
+}
+
+.buttons {
+    width: 100px;
+    height:100px;
+    border-radius: 50px;
+    font-size: 3rem;
+    color: white;
+    margin: 2%;
+    background-color: #2061b0; 
+}

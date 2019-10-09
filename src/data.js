@@ -23,10 +23,10 @@ export const operators = [
     char: "+",
     value: "+"
   },
-  {
-    char: "=",
-    value: "="
-  }
+  // {
+  //   char: "=",
+  //   value: "="
+  // }
 ];
 
  export const specials = ["C", "+/-", "%"];

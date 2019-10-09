@@ -9,10 +9,11 @@ export const Operators = (props) => {
   const [operatorBtn] = useState(operators);
   // STEP 2 - add the imported data to state
   return (
-    <div>
+    <div className = "objContain">
       {operatorBtn.map((oper, index) => (
-        <OperatorButton key={index} button={oper.char} operator={oper} addOpe={props.addOpe}/>
+        <OperatorButton key={index} button={oper.char} value={oper.value} addOpe={props.addOpe}/>
       ))}
+      
     </div>
   );
 };

@@ -37,25 +37,58 @@ console.log(displayNum);
   };
 
   const addOperator = (op) => {
-    if (displayNum[0] === 0){
-      return null;
-    }
-    if(displayNum[displayNum.length - 1] === "+" || "-" || "/" || "*"){
-      displayNum[displayNum.length - 1] = op.value;
-      console.log(displayNum);
+      if(displayNum[displayNum.length - 1] === "+" ||
+        displayNum[displayNum.length - 1] === "-" ||
+        displayNum[displayNum.length - 1] === "/" ||
+        displayNum[displayNum.length - 1] === "*"){
+        displayNum[displayNum.length - 1] = op
+      setDisplay([...displayNum]);
  } else {
-     setDisplay([...displayNum, op.value])
- }
+     setDisplay([...displayNum, op])
   } 
-
+}
+const toggleNeg = () => {
+  if(displayNum[displayNum.length - 1] === "-"){
+    displayNum[displayNum.length - 1] = "+";
+    setDisplay([...displayNum]);
+  }else if (displayNum[displayNum.length - 1] === "+"){
+      displayNum[displayNum.length - 1] = "-";
+      setDisplay([...displayNum]);
+  }else {
+    setDisplay([...displayNum, "-"]);
+  }
+}
+const percentSign = () => {
+  if (displayNum[0] === 0){
+    return displayNum;
+  }else {
+    setDisplay([...displayNum, "%"]);
+  }
+}
+const clear = () => {
+  setDisplay(displayNum = [0]);
+}
+const equals = () => {
+  displayNum = displayNum.join('');
+  setDisplay(eval(displayNum));
+  console.log(displayNum);
+}
   return (
     <div className = "container">
       <Logo />
       <div className = "App">
         <Display displayProps = {displayNum}/>
+        <div className = "calcBtn">
+        <div classname = "leftBtn">
+        <Specials clear = {clear} neg = {toggleNeg} percent={percentSign}/>
         <Numbers addNum = {addNumber}/>
+        </div>
+        <div className= "rightBtn">
         <Operators addOpe = {addOperator}/>
-        <Specials />
+        
+        <button className = "buttons" onClick = {equals}>=</button>
+        </div>
+        </div>
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
       </div>
     </div>
